@@ -14,11 +14,14 @@ namespace Task_7
             int peopleInQueue = int.Parse(Console.ReadLine());
 
             int minuteInHoures = 60;
-            int waitingTime = 10;
-            int timeHour = (peopleInQueue * waitingTime) / minuteInHoures;
-            int timeMinute = (peopleInQueue * waitingTime) % minuteInHoures;
+            int waitingTimeGrandma = 10;
+            int allWaitingTime = peopleInQueue * waitingTimeGrandma;
 
-            Console.WriteLine($"Вы должны отстоять в очереди {timeHour} часа и {timeMinute} минут.");
+            int waitingTime = allWaitingTime / minuteInHoures;
+            Console.Write($"Вы должны отстоять в очереди {waitingTime} часа и ");
+
+            waitingTime = allWaitingTime % minuteInHoures;
+            Console.WriteLine($"{waitingTime} минут.");
         }
     }
 }
